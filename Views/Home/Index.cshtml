@@ -1,0 +1,94 @@
+﻿@model Final_Year_Project.Models.Login
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/Line.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Login.css" rel="stylesheet" />
+    
+</head>
+<body style="background-color:lightskyblue">
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    @*//Title name*@
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <span style="color:darkblue; font-family:Impact; font-size:35px; ">Technical Text</span><span style="font-family:Impact; color:white; font-size:25px"> Surfer</span>
+        </div>
+             
+        <div class="col-md-4"></div>
+
+     </div>
+    <hr class="line">
+
+
+
+
+   
+
+
+    <div class="box login">
+
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+    
+        
+
+    
+    <p style="font-size:30px; background-color:aliceblue; color:black; height:30px; margin-top:10px; font-family:Calibri" > Login</p>
+	
+	  <label style="font-family:Calibri">Username</label>
+	   @Html.EditorFor(model => model.Username)
+       @Html.ValidationMessageFor(model => model.Username)
+	  <label style="font-family:Calibri">Password</label>
+	  @Html.EditorFor(model => model.Password)
+      @Html.ValidationMessageFor(model => model.Password)
+	  
+	     if (ViewBag.Error != null)
+         {
+             <span style="color:red">@ViewBag.Error</span> 
+         }
+	  <label><input type="checkbox" tabindex="3" style="font-family:Calibri">Keep me logged in</label>
+        <br><br><br><br>
+	  <input type="submit" class="btnLogin" value="Login" tabindex="2"  >
+      <input type="button" class="btnLogin" value="Sign up"  onclick="@("window.location.href='" + @Url.Action("Register", "Home") + "'")    ;" />   
+	
+
+       
+    }
+        
+     </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            @if (TempData["Message"] != null)
+            {
+                 <span style="color:red; background-color:yellow">@TempData["Message"]</span> 
+            
+            }
+
+        </div>
+        <div class="col-md-4"></div>
+
+    </div>
+
+    
+     
+</body>
+</html>

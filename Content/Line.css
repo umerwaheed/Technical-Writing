@@ -1,0 +1,15 @@
+hr.line
+ {
+     border: 0; height: 0;
+      /* Firefox... */
+       box-shadow: 0 0 2px 2px darkblue;
+       
+
+}
+ hr.line:after
+  {
+      /* Not really supposed to work, but does */ 
+      content: "\00a0";
+       /* Prevent margin collapse */
+
+ }

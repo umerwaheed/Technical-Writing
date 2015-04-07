@@ -1,0 +1,120 @@
+﻿@model Final_Year_Project.Models.RegistrationMetaData
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link href="~/Content/Register.css" rel="stylesheet" />
+    <link href="~/Content/Line.css" rel="stylesheet" />
+</head>
+<body style="background-color:lightskyblue; height:830px">
+    <link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
+    @*<script type="text/ecmascript">
+        $(function () {
+
+            $("input:text.date").datepicker({dateFormat:"dd/mm/yy"});
+        }
+        );
+
+
+    </script>*@
+    
+    
+    
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <span style="color:darkblue; font-family:Impact; font-size:35px; ">Technical Text</span><span style="font-family:Impact; color:white; font-size:25px"> Surfer</span>
+        </div>
+             
+        <div class="col-md-4"></div>
+
+     </div>
+    <hr class="line">
+
+
+
+
+
+
+    <div class="box register">
+
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+    
+        
+            
+    
+	 <p style="font-size:30px; background-color:aliceblue; color:black; height:30px; margin-top:10px; font-family:Calibri " > Sign Up</p>
+             <label style="font-family:Calibri">First name</label>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Firstname)
+                @Html.ValidationMessageFor(model => model.Firstname)
+            </div>
+    
+            <label style="font-family:Calibri">Last name</label>  
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Lastname)
+                @Html.ValidationMessageFor(model => model.Lastname)
+            </div>
+            
+            <label style="font-family:Calibri">Username</label>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Username)
+                @Html.ValidationMessageFor(model => model.Username)
+            </div>
+    
+            <label style="font-family:Calibri">Password</label>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+    
+            <label style="font-family:Calibri">Email</label>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+    
+            @*<div class="editor-label">
+                @Html.LabelFor(model => model.DOB)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DOB)
+                @Html.ValidationMessageFor(model => model.DOB)
+            </div>*@
+    
+            <label style="font-family:Calibri">Gender</label>
+            <div class="editor-field">
+                 @Html.DropDownListFor(model=>model.Gender, new List<SelectListItem>
+                    {
+                        new SelectListItem{ Text="Male", Value="Male"},
+                        new SelectListItem{ Text="Female", Value="Female"}
+                    }, "Select Gender")
+                @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+           
+            <p>
+                <input class="btnLogin"  type="submit" value="Register" />
+            </p>
+        <input type="button" class="btnLogin" value="Back"  onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'")    ;" />   
+       
+    }
+    
+     </div>
+    
+
+    
+</body>
+</html>

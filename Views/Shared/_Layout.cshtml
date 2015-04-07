@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/themes/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/LogoutButton.css" rel="stylesheet" />
+
+    @*for menu bar*@
+    <link href="~/Content/Menu.css" rel="stylesheet" />
+    <script src="~/Scripts/Menu.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+     @Scripts.Render("~/bundles/jquery")  @*This is here because of tinymce*@
+
+
+
+    
+</head>
+<body style="background-color:lightskyblue") >
+    <div style="height:80px; background-color:lightskyblue" >
+        <div class="row">
+            <div class="col-md-7" >
+                <p style="text-align:left; margin-top:5px ; margin-left:5px ">
+                    <span style="color:darkblue; font-family:Impact; font-size:25px; ">Technical Text</span><span style="font-family:Impact; color:white; font-size:18px"> Surfer</span>
+                    <br>
+                    <span style="text-align:left; margin-left:5px; font-family:'Century Gothic'; color:white; font-size:15px">Lets make the document effective</span>
+                </p>
+            </div>
+
+            <div class="col-md-5">
+                <p style="text-align:right; font-size:20px; font-family:Arial; color:darkblue;  margin-right:10px; margin-top:20px; ">@Session["LoggedUsername"]<input type="submit" class="logout" value="Logout" onclick="@("window.location.href='" + @Url.Action("Logout", "Menu") + "'")    ;"></p>
+            </div>
+
+        </div>
+        
+    </div>
+
+    
+
+    <div style="height:65px;  " >
+
+            <div id='cssmenu'>
+                <ul>
+                    <li class='active'><a href='#'>Home</a></li>
+                    <li><a href='#'>About</a></li>
+                    <li><a href='#'>Contact</a></li>
+                    <li><a href='#'>Profile</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+    <div  id="main body" style="height:1000px">
+        
+        
+           @RenderBody()
+
+   
+    @RenderSection("scripts", required: false)
+     
+
+
+    </div>
+
+
+
+
+
+
+   @* <div style="height:25px; background-color:gray">
+
+        <p>Fotter</p>
+    </div>*@
+
+
+
+
+
+
+    
+</body>
+</html>

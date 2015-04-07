@@ -1,0 +1,160 @@
+﻿@model Final_Year_Project.Models.Rules
+@{
+    ViewBag.Title = "OpenFile";
+}
+<header>
+    <script src="~/Scripts/tinymce.min.js"></script>
+    
+    <script src="@Url.Content("~/Scripts/jquery-x.x.x.min.js")" type="text/javascript"></script>
+    <link href="~/Content/MistakeMenu.css" rel="stylesheet" />
+    <script src="~/Scripts/MistakeMenu.js"></script>
+
+
+    @*Jquery Work here*@
+
+    <script>
+        $(document).ready(function () {
+            $("#Home").click(function () {
+                $("#Homeshow").slideDown("slow");
+                $("#Contactshow").slideUp("slow");
+                $("#Profileshow").slideUp("slow");
+            });
+            $("#Contact").click(function () {
+                $("#Contactshow").slideDown("slow");
+                $("#Homeshow").slideUp("slow");
+                $("#Profileshow").slideUp("slow");
+            });
+            $("#Profile").click(function () {
+                $("#Profileshow").slideDown("slow");
+                $("#Contactshow").slideUp("slow");
+                $("#Homeshow").slideUp("slow");
+            });
+
+        });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</header>
+
+<div class="row">
+
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6" style="font-size:15px" >
+
+        @using (Html.BeginForm("OpenFile", "File", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+             <input type="file" name="file"> <input type="submit" value="open" >
+             
+        }
+
+    </div>
+
+    <div class="col-md-3"></div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-10">
+         @using (Html.BeginForm()) {
+        
+        <div class="editor-field">
+            
+            @Html.EditorFor(model => model.Content)
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+
+             //Heading of menu
+              <div id='Mistakemenu'>
+                  
+                <ul>
+                    
+                    <li><a id="Home">Comma</a></li>
+                    <li><a id="Contact">Short Form</a></li>
+                    <li><a id="Profile">Other</a></li>
+                </ul>
+            </div>
+             //Show menu
+            <br><br>
+             <div id="Homeshow" style="font-size:15px; ">
+
+                 <b>
+                 <span style="background-color:yellow">Make your selection</span><br>
+                    @Html.CheckBoxFor( model => model.R1) Therefore    <br>
+                     @Html.CheckBoxFor( model => model.R2) However <br>
+                     @Html.CheckBoxFor( model => model.R3) Whenever <br>
+                     @Html.CheckBoxFor( model => model.R4) Further <br>
+                     @Html.CheckBoxFor( model => model.R5) Furthermore <br>
+                     @Html.CheckBoxFor( model => model.R6) Finally <br>
+                     @Html.CheckBoxFor( model => model.R7) Thus <br>
+                     @Html.CheckBoxFor( model => model.R8) Similarly <br>
+                     
+
+
+                 
+                </b>
+             </div>
+             
+             <div id="Contactshow" style="display:none; font-size:15px;" >
+                <b>
+                 <span style="background-color:yellow">Make your selection</span><br>
+                    @Html.CheckBoxFor( model => model.R9)   Figure <br>
+                     @Html.CheckBoxFor( model => model.R10) Section <br>
+                     @Html.CheckBoxFor( model => model.R11) i.e <br>
+                     @Html.CheckBoxFor( model => model.R12) etc <br>
+                     @Html.CheckBoxFor( model => model.R13) Furt <br>
+                     @Html.CheckBoxFor( model => model.R14) Finally <br>
+                     @Html.CheckBoxFor( model => model.R15) Wan't <br>
+                     @Html.CheckBoxFor( model => model.R16) Don't <br>
+
+                    </b>
+
+             </div>
+             
+             <div id="Profileshow" style="display:none; font-size:15px" >
+
+                 <b>
+                     @Html.CheckBoxFor( model => model.R17) 100 % <br>
+                     @Html.CheckBoxFor( model => model.R18) Unit <br>
+                     
+                 </b>
+
+             </div>
+             
+             
+             
+             
+             <button type="submit" formaction="@Url.Action("Rules", "File")">Proceed</button> 
+             
+             
+         }
+        @*//<textarea rows="15" cols="150" > </textarea>*@
+
+    </div>
+
+    <div class="col-md-1"></div>
+
+   
+
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<header>
+
+    <link href="~/Content/Button.css" rel="stylesheet" />
+
+</header>
+
+
+<div class="row" style="height:70px;" >
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+    <span style="font-size:35px; font-family:'Arial Rounded MT'; color:darkblue; margin-left:8px">Welcome To Technical Text Surfer</span><br>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div style="height:250px" class="row">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-10" >
+    <p style="font-family:Calibri; font-size:20px; text-align:justify">
+    Technical writing is very important while writing any type of document. Technical writing has different rules which must be
+    followed. A document, which fulfills these rules, is considered very effective document. People, now a day, do not care for
+    these rules. So the need of hour is to have such software/application which allows people to maintain the document in technical
+    writing format. This software allows people to verify whether the document is created according to the technical writing rules
+    or not. Later on, document will become effective one. There will be options to implement certain rules. The user will also be
+    informed about the percentage mistakes and improvements of document. It provides you an efficient way to convert a document to
+    an effective one by implementing or leting you to implement Technical writing rules</p>
+    </div>
+
+    <div class="col-md-1"></div>
+
+
+
+
+</div>
+
+    
+
+<div class="row" style="height:300px">
+    
+    <div class="col-md-4">
+        
+        <img src="~/Images/5.png" style="width:150px; height:150px; margin-left:45px"/><br>
+        <input type="button" class="btn" value="Open File" style="margin-left:35px" onclick="@("window.location.href='" + @Url.Action("OpenFile", "File") + "'");" />
+    </div>
+
+    <div class="col-md-4">
+        <img src="~/Images/7.png" style="width:150px; height:150px; margin-left:45px"/>
+         <input type="button" class="btn" value="Watch Video Tutorial" style="margin-left:15px" onclick="@("window.location.href='" + @Url.Action("VideoTutorial", "Menu") + "'")    ;" />
+    </div>
+
+    <div class="col-md-4">
+        <img src="~/Images/9.png" style="width:150px; height:150px; margin-left:55px"/>
+         <input type="button" class="btn" value="Check Statistics" style="margin-left:30px" onclick="@("window.location.href='" + @Url.Action("Stats", "Menu") + "'")    ;" />
+    </div>
+   <div class="col-md-3"></div>
+
+</div>
+
+<div class="col-md-2"></div>
+
+    <div class="col-md-8">
+        <span style="font-size:15px; font-family:'Calibri';text-align:justify"> Contact:<br>
+       <img src="~/Images/email.gif" style="width:20px; height:20px;"/> Email: Mcsf13a049@pucit.edu.pk<br>
+        <img src="~/Images/email.gif" style="width:20px; height:20px;"/> Email: Mcsf13a005@pucit.edu.pk<br>
+        <img src="~/Images/email.gif" style="width:20px; height:20px;"/> Email: Mcsf13a006@pucit.edu.pk<br>
+        <img src="~/Images/email.gif" style="width:20px; height:20px;"/> Email: Mcsf13a015@pucit.edu.pk</span>
+    </div>
+
+    <div class="col-md-2"></div>
+
+
